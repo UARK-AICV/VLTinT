@@ -148,8 +148,42 @@ python visualization/demo.py path/to/raw/videos path/to/desired/output results/a
 
 ### Demo
 
-![](assets/vltint_vpc_demo1.gif)
-![](assets/vltint_vpc_demo2.gif)
+<img src="assets/vltint_vpc_demo1.gif" width="600"/>
+<img src="assets/vltint_vpc_demo2.gif" width="600"/>
+
+## Citation
+If you find this code useful for your research, please cite our papers:
+
+```bibtex
+@ARTICLE{2022arXiv221115103Y,
+       author = {{Yamazaki}, Kashu and {Vo}, Khoa and {Truong}, Sang and {Raj}, Bhiksha and {Le}, Ngan},
+        title = "{VLTinT: Visual-Linguistic Transformer-in-Transformer for Coherent Video Paragraph Captioning}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Computer Vision and Pattern Recognition},
+         year = 2022,
+        month = nov,
+          eid = {arXiv:2211.15103},
+        pages = {arXiv:2211.15103},
+archivePrefix = {arXiv},
+       eprint = {2211.15103},
+ primaryClass = {cs.CV},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221115103Y},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+
+```
+
+```bibtex
+@INPROCEEDINGS{9897766,
+  author={Yamazaki, Kashu and Truong, Sang and Vo, Khoa and Kidd, Michael and Rainwater, Chase and Luu, Khoa and Le, Ngan},
+  booktitle={2022 IEEE International Conference on Image Processing (ICIP)}, 
+  title={VLCAP: Vision-Language with Contrastive Learning for Coherent Video Paragraph Captioning}, 
+  year={2022},
+  volume={},
+  number={},
+  pages={3656-3661},
+  doi={10.1109/ICIP46576.2022.9897766}}
+```
 
 ## Acknowledgement
 We acknowledge the following open-source projects that we based on our work:
