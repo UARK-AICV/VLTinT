@@ -170,7 +170,6 @@ archivePrefix = {arXiv},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221115103Y},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
 }
-
 ```
 
 ```bibtex
