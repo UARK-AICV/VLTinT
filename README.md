@@ -89,7 +89,7 @@ video_feature
 ### Agent feature extraction
 1. To extract the agent features, we will use [detectron](https://github.com/facebookresearch/detectron2) for bbox detection. 
     ```
-    git clone https://github.com/facebookresearch/detectron2
+    git clone https://github.com/vhvkhoa/detectron2
     python -m pip install -e detectron2
     wget https://dl.fbaipublicfiles.com/detectron2/COCO-Detection/faster_rcnn_R_101_FPN_3x/137851257/model_final_f6e8b1.pkl
     python tools/bbox_extract.py path/to/dir/rescaled path/to/dir/bbox --config-file configs/COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml --sampling-rate 16 --target-frames 100 --opts MODEL.WEIGHTS model_final_f6e8b1.pkl
