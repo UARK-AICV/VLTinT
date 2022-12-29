@@ -47,12 +47,6 @@ data
   |   |_ clip_b16
   |       |- lang_feature
   |       |_ sent_feature
-  |_ yc2
-      |- c3d_env
-      |- c3d_agent
-      |_ clip_b16
-          |- lang_feature
-          |_ sent_feature
 densevid_eval
 preprocess
 scripts
@@ -149,9 +143,9 @@ python visualization/demo.py path/to/raw/videos path/to/desired/output results/a
 ```
 
 ### Demo
-
+<center>
 <img src="assets/vltint_vpc_demo1.gif" width="600"/>
-<img src="assets/vltint_vpc_demo2.gif" width="600"/>
+</center>
 
 ## Citation
 If you find this code useful for your research, please cite our papers:
