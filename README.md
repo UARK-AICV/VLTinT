@@ -143,7 +143,7 @@ The results should be comparable with the results of the paper.
 ## Visualization
 To visualize the result with the video (mp4):
 ```
-python visualization/demo.py path/to/raw/videos path/to/desired/output results/anet_re_*/greedy_pred_[val/test].json --video_id v_CSDApI2nHPU
+python visualization/demo.py --input_mp4_folder /home/kashu/research/related_work/VLTinT/demo/inputs --output_mp4_folder /home/kashu/research/related_work/VLTinT/demo/ --caption_file results/anet_re_init_2022_10_24_08_31_04/greedy_pred_val.json --video_id v_5qsXmDi8d74
 ```
 
 ### Demo
