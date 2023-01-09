@@ -1,5 +1,7 @@
 VLTinT: Visual-Linguistic Transformer-in-Transformer for Coherent Video Paragraph Captioning
 =====
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/vltint-visual-linguistic-transformer-in/video-captioning-on-activitynet-captions)](https://paperswithcode.com/sota/video-captioning-on-activitynet-captions?p=vltint-visual-linguistic-transformer-in)
+
 Video paragraph captioning aims to generate a multi-sentence description of an untrimmed video with several temporal event locations in coherent storytelling. 
 Following the human perception process, where the scene is effectively understood by decomposing it into visual (e.g. human, animal) and non-visual components (e.g. action, relations) under the mutual influence of vision and language, we first propose a visual-linguistic (VL) feature. In the proposed VL feature, the scene is modeled by three modalities including (i) a global visual environment; (ii) local visual main agents; (iii) linguistic scene elements. We then introduce an autoregressive **Transformer-in-Transformer (TinT)** to simultaneously capture the semantic coherence of intra- and inter-event contents within a video. Finally, we present a new **VL contrastive loss function** to guarantee learnt embedding features are matched with the captions semantics. Comprehensive experiments and extensive ablation studies on ActivityNet Captions and YouCookII datasets show that the proposed Visual-Linguistic Transformer-in-Transform (VLTinT) outperforms prior state-of-the-art methods on accuracy and diversity. 
 
@@ -45,12 +47,6 @@ data
   |   |_ clip_b16
   |       |- lang_feature
   |       |_ sent_feature
-  |_ yc2
-      |- c3d_env
-      |- c3d_agent
-      |_ clip_b16
-          |- lang_feature
-          |_ sent_feature
 densevid_eval
 preprocess
 scripts
@@ -87,7 +83,7 @@ video_feature
 ### Agent feature extraction
 1. To extract the agent features, we will use [detectron](https://github.com/facebookresearch/detectron2) for bbox detection. 
     ```
-    git clone https://github.com/facebookresearch/detectron2
+    git clone https://github.com/vhvkhoa/detectron2
     python -m pip install -e detectron2
     wget https://dl.fbaipublicfiles.com/detectron2/COCO-Detection/faster_rcnn_R_101_FPN_3x/137851257/model_final_f6e8b1.pkl
     python tools/bbox_extract.py path/to/dir/rescaled path/to/dir/bbox --config-file configs/COCO-Detection/faster_rcnn_R_101_FPN_3x.yaml --sampling-rate 16 --target-frames 100 --opts MODEL.WEIGHTS model_final_f6e8b1.pkl
@@ -147,9 +143,9 @@ python visualization/demo.py --input_mp4_folder /home/kashu/research/related_wor
 ```
 
 ### Demo
-
+<center>
 <img src="assets/vltint_vpc_demo1.gif" width="600"/>
-<img src="assets/vltint_vpc_demo2.gif" width="600"/>
+</center>
 
 ## Citation
 If you find this code useful for your research, please cite our papers:
