@@ -58,6 +58,18 @@ video_feature
   |_ yc2_duration_frame.csv
 ```
 
+### 
+Our features extracted from rescaled videos of ActivityNet-1.3 can be downloaded below:
+* Env features are [here](https://uark.box.com/s/01twnsrjxbf7d48wki5s5v43ri5p66vl).
+* Agent features are [here](https://drive.google.com/file/d/1lOQG1FgDseRKDs3RNgpKd000OOZiag1s/view?usp=sharing).
+* Lang features are [here](https://uark.box.com/s/un9t7vv2l61u1541krqfxqro1t9hfkm4).
+
+You can use our preprocessed features above or process by yourself as follows:
+
+<details>
+<summary><b>1. Download data</b></summary>
+<br>
+
 1. Download raw videos of [ActivityNet](https://cs.stanford.edu/people/ranjaykrishna/densevid/) and [YouCook2](http://youcook2.eecs.umich.edu/download) and convert all the videos into `mp4` for the later process (you need `ffmpeg` for the script below).
 
     ```bash
@@ -69,8 +81,12 @@ video_feature
     ```
     python preprocess/rescale_video.py --video-root path/to/dir/*.mp4 --output-root path/to/dir/rescaled --frame-dir path/to/dir/middle_frames
     ```
+</details>
 
-### Env feature extraction
+<details>
+<summary><b>2. Env feature extraction</b></summary>
+<br>
+
 1. To extract the visual features from the rescaled videos, we will use [this](https://github.com/vhvkhoa/SlowFast) repo.
     ```
     git clone https://github.com/vhvkhoa/SlowFast
@@ -81,8 +97,14 @@ video_feature
     ```
     python tools/run_net.py --cfg configs/Kinetics/SLOWONLY_8x8_R50.yaml --feature_extraction --num_features 100 --video_dir path/to/dir/rescaled --feat_dir path/to/data/[anet/yc2]/c3d_env TEST.CHECKPOINT_FILE_PATH models/SLOWONLY_8x8_R50.pkl NUM_GPUS 1 TEST.CHECKPOINT_TYPE caffe2 TEST.BATCH_SIZE 1 DATA.SAMPLING_RATE 1 DATA.NUM_FRAMES 16 DATA_LOADER.NUM_WORKERS 0
     ```
+    
+</details>
 
-### Agent feature extraction
+<details>
+<summary><b>3. Agent feature extraction</b></summary>
+<br>
+
+### 
 1. To extract the agent features, we will use [detectron](https://github.com/facebookresearch/detectron2) for bbox detection. 
     ```
     git clone https://github.com/vhvkhoa/detectron2
@@ -95,8 +117,14 @@ video_feature
     cd SlowFast
     python tools/run_net.py --cfg configs/Kinetics/SLOWONLY_8x8_R50.yaml --feature_extraction --num_features 100 --video_dir path/to/dir/rescaled --feat_dir path/to/data/[anet/yc2]/c3d_agent MODEL.NUM_CLASSES 200 TEST.CHECKPOINT_TYPE caffe2 TEST.CHECKPOINT_FILE_PATH models/SLOWONLY_8x8_R50.pkl NUM_GPUS 1 TEST.BATCH_SIZE 1 DATA.PATH_TO_BBOX_DIR path/to/dir/bbox DETECTION.ENABLE True DETECTION.SPATIAL_SCALE_FACTOR 32 DATA.SAMPLING_RATE 1 DATA.NUM_FRAMES 16 RESNET.SPATIAL_STRIDES [[1],[2],[2],[1]] RESNET.SPATIAL_DILATIONS [[1],[1],[1],[2]] DATA.PATH_TO_TMP_DIR /tmp/agent_0/
     ```
+    
+</details>
 
-### Lang feature extraction
+<details>
+<summary><b>4. Lang feature extraction</b></summary>
+<br>
+
+
 1. To extract the linguistic features from those videos, run the following commands. Change `--dset_name` to `anet` or `yc2` to specify the dataset.
 
     ```
@@ -104,6 +132,8 @@ video_feature
     python preprocess/extract_lang_feat.py --frame-root path/to/dir/middle_frames --output-root path/to/data/[anet/yc2]/clip_b16/lang_feature --dset_name [anet/yc2]
     python preprocess/extract_sent_feat.py --caption_root ./densevid_eval/[anet/yc2]_data/train.json --output_root path/to/data/[anet/yc2]/clip_b16/sent_features
    ```
+   
+</details>
 
 ### Build Vocabularies
 Execute following command to create a vocablary for the model. Change `--dset_name` to `anet` or `yc2` to specify the dataset.
