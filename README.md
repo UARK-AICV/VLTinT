@@ -17,25 +17,22 @@ bundle exec jekyll serve
 If you find this code useful for your research, please cite our papers:
 
 ```bibtex
-@ARTICLE{2022arXiv221115103Y,
-       author = {{Yamazaki}, Kashu and {Vo}, Khoa and {Truong}, Sang and {Raj}, Bhiksha and {Le}, Ngan},
-        title = "{VLTinT: Visual-Linguistic Transformer-in-Transformer for Coherent Video Paragraph Captioning}",
-      journal = {arXiv e-prints},
-     keywords = {Computer Science - Computer Vision and Pattern Recognition},
-         year = 2022,
-        month = nov,
-          eid = {arXiv:2211.15103},
-        pages = {arXiv:2211.15103},
-archivePrefix = {arXiv},
-       eprint = {2211.15103},
- primaryClass = {cs.CV},
-       adsurl = {https://ui.adsabs.harvard.edu/abs/2022arXiv221115103Y},
-      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+@article{kashu_vltint,
+　　title={VLTinT: Visual-Linguistic Transformer-in-Transformer for Coherent Video Paragraph Captioning},
+　　volume={37},
+　　url={https://ojs.aaai.org/index.php/AAAI/article/view/25412},
+　　DOI={10.1609/aaai.v37i3.25412},
+　　number={3},
+　　journal={Proceedings of the AAAI Conference on Artificial Intelligence},
+　　author={Yamazaki, Kashu and Vo, Khoa and Truong, Quang Sang and Raj, Bhiksha and Le, Ngan},
+　　year={2023},
+　　month={Jun.},
+　　pages={3081-3090}
 }
 ```
 
 ```bibtex
-@INPROCEEDINGS{9897766,
+@INPROCEEDINGS{kashu_vlcap,
   author={Yamazaki, Kashu and Truong, Sang and Vo, Khoa and Kidd, Michael and Rainwater, Chase and Luu, Khoa and Le, Ngan},
   booktitle={2022 IEEE International Conference on Image Processing (ICIP)}, 
   title={VLCAP: Vision-Language with Contrastive Learning for Coherent Video Paragraph Captioning}, 
