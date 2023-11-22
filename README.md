@@ -212,4 +212,8 @@ If you find this code useful for your research, please cite our papers:
 ## Acknowledgement
 We acknowledge the following open-source projects that we based on our work:
 
-1. [MART](https://github.com/jayleicn/recurrent-transformer) 
+1. [MART](https://github.com/jayleicn/recurrent-transformer)
+
+## Contact
+Please feel free to create an issue on this repository for any questions, comments and reporting bugs. 
+Send an email to [Kashu Yamazaki](https://kashu7100.github.io/) for other inquiries.
